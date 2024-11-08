@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:21.1.0
+    environment:
+      KC_DB: mysql
+      KC_DB_URL_HOST: mysql_kc
+      KC_DB_URL_PORT: 3306
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: password
+      KC_LOGLEVEL: DEBUG
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+    command: ["start-dev"]
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql_kc
+    volumes:
+      - ./mysql-connector:/opt/keycloak/providers
+
+  mysql_kc:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: keycloak
+      MYSQL_USER: keycloak
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: mauFJcuf5dhRMQrjj
+    volumes:
+      - ./my-datavolume:/var/lib/mysql
+    ports:
+      - "3306:3306"
