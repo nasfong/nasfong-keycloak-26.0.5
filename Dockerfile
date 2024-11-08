@@ -6,7 +6,7 @@ ENV KC_HOSTNAME=nasfong-keycloak-2605-production.up.railway.app
 ENV KC_BOOTSTRAP_ADMIN_USERNAME=admin
 ENV KC_BOOTSTRAP_ADMIN_PASSWORD=admin
 ENV KC_LOGLEVEL=DEBUG
-ENV KC_DB=H2
+ENV KC_DB=dev-mem
 
 # Expose port 8080
 EXPOSE 8080
