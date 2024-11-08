@@ -13,4 +13,5 @@ ENV KC_DB=dev-mem
 EXPOSE 8080
 
 # Command to run Keycloak in development mode
+ENV KC_HOSTNAME=nasfong-keycloak-2605-production.up.railway.app
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
