@@ -12,7 +12,7 @@ services:
       KC_LOGLEVEL: DEBUG
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
-    command: ["start-dev"]
+    command: ["sh", "-c", "/opt/keycloak/bin/kc.sh start-dev"]
     ports:
       - "8080:8080"
     depends_on:
