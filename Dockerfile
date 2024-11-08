@@ -1,5 +1,5 @@
 # Use Keycloak base image
-FROM quay.io/keycloak/keycloak:26.0.5
+FROM quay.io/keycloak/keycloak:21.1.0
 
 # Set environment variables for the Keycloak admin user
 ENV KC_BOOTSTRAP_ADMIN_USERNAME=admin
