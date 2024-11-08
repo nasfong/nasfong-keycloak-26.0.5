@@ -12,6 +12,8 @@ services:
       KC_LOGLEVEL: DEBUG
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
     command: ["sh", "-c", "/opt/keycloak/bin/kc.sh start-dev"]
     ports:
       - "8080:8080"
@@ -20,14 +22,14 @@ services:
     volumes:
       - ./mysql-connector:/opt/keycloak/providers
 
-  mysql_kc:
-    image: mysql:8.0
-    environment:
-      MYSQL_DATABASE: keycloak
-      MYSQL_USER: keycloak
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: mauFJcuf5dhRMQrjj
-    volumes:
-      - ./my-datavolume:/var/lib/mysql
-    ports:
-      - "3306:3306"
+  # mysql_kc:
+  #   image: mysql:8.0
+  #   environment:
+  #     MYSQL_DATABASE: keycloak
+  #     MYSQL_USER: keycloak
+  #     MYSQL_PASSWORD: password
+  #     MYSQL_ROOT_PASSWORD: mauFJcuf5dhRMQrjj
+  #   volumes:
+  #     - ./my-datavolume:/var/lib/mysql
+  #   ports:
+  #     - "3306:3306"
