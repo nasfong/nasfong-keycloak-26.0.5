@@ -20,14 +20,14 @@ services:
     volumes:
       - ./mysql-connector:/opt/keycloak/providers
 
-  mysql_kc:
-    image: mysql:8.0
-    environment:
-      MYSQL_DATABASE: keycloak
-      MYSQL_USER: keycloak
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: mauFJcuf5dhRMQrjj
-    volumes:
-      - ./my-datavolume:/var/lib/mysql
-    ports:
-      - "3306:3306"
+  # mysql_kc:
+  #   image: mysql:8.0
+  #   environment:
+  #     MYSQL_DATABASE: keycloak
+  #     MYSQL_USER: keycloak
+  #     MYSQL_PASSWORD: password
+  #     MYSQL_ROOT_PASSWORD: mauFJcuf5dhRMQrjj
+  #   volumes:
+  #     - ./my-datavolume:/var/lib/mysql
+  #   ports:
+  #     - "3306:3306"
